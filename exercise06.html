@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>exercise06</title>
+</head>
+<body>
+<div id="app">
+    <diycomponent v-for="item in items" v-bind:xue="item"></diycomponent>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.21/dist/vue.min.js"></script>
+<script>
+    Vue.component("diycomponent", {
+        props: ["xue"],
+        template: "<li>{{xue}}</li>"
+    });
+
+    var vm = new Vue({
+        el: "#app",
+        data: {
+            items: ["xuehe", "vanessa"]
+        }
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+{
+  "name": "薛贺在学习vue axios",
+  "url": "https://www.baidu.com",
+  "page": 1,
+  "isNonProfit": true,
+  "address": {
+    "street": "Allee der Kosmonauten 95",
+    "city": "berlin",
+    "country": "Deutschland"
+  },
+  "links": [
+    {
+      "name": "bilibili",
+      "url": "https://space.bilibili.com"
+    },
+    {
+      "name": "狂神说java",
+      "url": "https://blog.kuangstudy.com"
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>exercise04</title>
+</head>
+<body>
+<div id="app">
+    <button v-on:click="clickevents">click me</button>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.21/dist/vue.min.js"></script>
+<script>
+    var vm = new Vue({
+        el: "#app",
+        data: {
+            message: "this is a click event"
+        },
+        methods: {
+          clickevents: function () {
+              alert(this.message);
+          }
+        }
+    });
+</script>
+</body>
+</html>
