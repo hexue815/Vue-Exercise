@@ -8,7 +8,10 @@
 <div id="app">
     <todo>
         <todo-title slot="todo-title" v-bind:title="title"></todo-title>
-        <todo-items slot="todo-items" v-for="item in todoItems" v-bind:item="item"></todo-items>
+        <todo-items slot="todo-items" v-for="(item, index) in todoItems"
+                    v-bind:item="item" v-bind:index="index"
+                    v-on:remove="removeItem(index)"
+                    v-bind:key="index"></todo-items>
     </todo>
 </div>
 
@@ -27,8 +30,13 @@
         template: "<div>{{title}}</div>"
     });
     Vue.component("todo-items", {
-        props: ["item"],
-        template: "<li>{{item}}</li>"
+        props: ["item", "index"],
+        template: "<li>{{item}} <button @click='remove'>删除</button></li>",
+        methods: {
+            remove: function (index) {
+                this.$emit('remove', index);
+            }
+        }
     });
 
     var vm = new Vue({
@@ -36,6 +44,11 @@
         data: {
             title: "书籍列表",
             todoItems: ["java", "C++", "Linux"]
+        },
+        methods: {
+            removeItem: function (index) {
+                this.todoItems.splice(index, 1);
+            }
         }
     });
 </script>
